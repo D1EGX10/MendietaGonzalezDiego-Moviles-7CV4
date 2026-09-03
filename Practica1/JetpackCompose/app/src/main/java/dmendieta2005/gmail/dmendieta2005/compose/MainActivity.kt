@@ -63,7 +63,7 @@ fun DatosEstudiante(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(bottom = 8.dp)
         )
         Text(
-            text = "Mi grupo es: 7CM2",
+            text = "Mi grupo es: 7CV4",
             fontSize = 18.sp,
             color = Color.Black
         )
