@@ -1,0 +1,17 @@
+# Verificar API
+curl http://localhost:5000/
+
+# Registrar usuario
+curl -X POST http://localhost:5000/register -H "Content-Type: application/json" -d "{\"username\":\"diego\",\"password\":\"123456\"}"
+
+# Login: copia el token de la respuesta
+curl -X POST http://localhost:5000/login -H "Content-Type: application/json" -d "{\"username\":\"diego\",\"password\":\"123456\"}"
+
+# CRUD (reemplaza TOKEN por el token obtenido en /login)
+curl http://localhost:5000/tasks -H "Authorization: Bearer TOKEN"
+
+curl -X POST http://localhost:5000/tasks -H "Content-Type: application/json" -H "Authorization: Bearer TOKEN" -d "{\"title\":\"Estudiar Kotlin\",\"description\":\"Repasar Jetpack Compose\",\"completed\":false}"
+
+curl -X PUT http://localhost:5000/tasks/1 -H "Content-Type: application/json" -H "Authorization: Bearer TOKEN" -d "{\"completed\":true}"
+
+curl -X DELETE http://localhost:5000/tasks/1 -H "Authorization: Bearer TOKEN"
